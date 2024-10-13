@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mercado Canabico</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white">
+
+    <section class="relative">
+        <img src="banner.webp" alt="Mercado Canabico" class="w-full h-screen object-cover object-top opacity-75">
+        <div class="absolute inset-0 flex flex-col items-center justify-center text-center mt-20">
+            <h1 class="text-5xl font-extrabold text-white">Lançamento em 2025</h1>
+            <p class="text-xl mt-4">O primeiro marketplace dedicado à cultura canábica no Brasil.</p>
+            <a href="#counter" class="mt-6 bg-green-500 text-white py-3 px-6 rounded hover:bg-green-600">Cadastre-se para Novidades</a>
+        </div>
+    </section>
+
+    <section class="py-16 bg-gray-800 text-center">
+        <h2 class="text-4xl font-bold">Por que escolher o Mercado Canábico?</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 px-6">
+            <div>
+                <h3 class="text-2xl font-semibold">Variedade de Produtos</h3>
+                <p class="mt-4">Tudo o que você precisa em um só lugar.</p>
+            </div>
+            <div>
+                <h3 class="text-2xl font-semibold">Conteúdo Educacional</h3>
+                <p class="mt-4">Informações sobre cultivo, uso medicinal e muito mais.</p>
+            </div>
+            <div>
+                <h3 class="text-2xl font-semibold">Comunidade Ativa</h3>
+                <p class="mt-4">Junte-se a milhares de entusiastas da cultura canábica.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="counter" class="py-16 bg-gray-900 text-center">
+        <h2 class="text-4xl font-bold">Faltam...</h2>
+        <div id="contador" class="text-3xl font-semibold mt-6">00 dias, 00 horas, 00 minutos, 00 segundos</div>
+        <a href="#" class="mt-8 inline-block bg-green-500 text-white py-3 px-6 rounded hover:bg-green-600">Receba um Alerta de Lançamento</a>
+    </section>
+
+    <footer class="py-8 bg-gray-800 text-center">
+        <p class="text-gray-400">© 2024 Mercado Canabico. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+        const lancamento = new Date("Jan 1, 2025 00:00:00").getTime();
+
+        const contador = setInterval(function() {
+            const agora = new Date().getTime();
+            const diferenca = lancamento - agora;
+
+            const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
+            const horas = Math.floor((diferenca % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutos = Math.floor((diferenca % (1000 * 60 * 60)) / (1000 * 60));
+            const segundos = Math.floor((diferenca % (1000 * 60)) / 1000);
+
+            document.getElementById("contador").innerHTML = `${dias} dias, ${horas} horas, ${minutos} minutos, ${segundos} segundos`;
+
+            if (diferenca < 0) {
+                clearInterval(contador);
+                document.getElementById("contador").innerHTML = "Lançado!";
+            }
+        }, 1000);
+    </script>
+
+</body>
+</html>
