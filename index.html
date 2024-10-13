@@ -47,24 +47,25 @@
     </footer>
 
     <script>
-        const lancamento = new Date("Jan 1, 2025 00:00:00").getTime();
+    const launchDate = new Date("Jan 1, 2025 00:00:00").getTime();
 
-        const contador = setInterval(function() {
-            const agora = new Date().getTime();
-            const diferenca = lancamento - agora;
+    const countdown = setInterval(() => {
+        const now = new Date().getTime();
+        const timeLeft = launchDate - now;
 
-            const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
-            const horas = Math.floor((diferenca % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutos = Math.floor((diferenca % (1000 * 60 * 60)) / (1000 * 60));
-            const segundos = Math.floor((diferenca % (1000 * 60)) / 1000);
+        const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
-            document.getElementById("contador").innerHTML = `${dias} dias, ${horas} horas, ${minutos} minutos, ${segundos} segundos`;
+        document.getElementById("countdown").innerHTML = 
+            `${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
 
-            if (diferenca < 0) {
-                clearInterval(contador);
-                document.getElementById("contador").innerHTML = "Lançado!";
-            }
-        }, 1000);
+        if (timeLeft < 0) {
+            clearInterval(countdown);
+            document.getElementById("countdown").innerHTML = "Launched!";
+        }
+    }, 1000);
     </script>
 
 </body>
