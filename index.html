@@ -4,46 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Mercado Canabico</title>
+    <title>Mercado Canábico</title>
+    <link rel="shortcut_icon" type="image/png" href="favicon.ico">
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Cores otimizadas */
+        .primary-bg { background-color: #5A8DEE; } /* Azul claro */
+        .secondary-bg { background-color: #7A5CFA; } /* Laranja */
+        .text-primary { color: #23e272; } /* Verde vibrante */
+        .accent-bg { background-color: #ff5fcf; } /* Rosa choque */
+        .footer-text { color: #ffd733; } /* Amarelo */
+        .section-title { color: #EBEBEB; } /* Branco leve */
+    </style>
 </head>
-<body class="bg-gray-900 text-white">
-
+<body class="primary-bg text-primary">
     <section class="relative">
-        <img src="banner.webp" alt="Mercado Canabico" class="w-full h-screen object-cover object-top opacity-75">
-        <div class="absolute inset-0 flex flex-col items-center justify-center text-center mt-20">
-            <h1 class="text-5xl font-extrabold text-white">Lançamento em 2025</h1>
-            <p class="text-xl mt-4">O primeiro marketplace dedicado à cultura canábica no Brasil.</p>
-            <a href="#counter" class="mt-6 bg-green-500 text-white py-3 px-6 rounded hover:bg-green-600">Cadastre-se para Novidades</a>
+        <img src="images/banner_2.jpg" alt="Mercado Canabico" class="w-full h-screen object-cover object-top opacity-75">
+        <div class="absolute inset-x-0 bottom-0 flex flex-col items-center justify-center text-center mb-20">
+            <h1 class="text-5xl font-extrabold section-title">Lançamento em 2025</h1>
+            <p class="text-xl mt-4 section-title">O primeiro marketplace dedicado à cultura canábica no Brasil.</p>
+            <a href="#counter" class="mt-6 accent-bg text-primary py-3 px-6 rounded hover:bg-opacity-90 section-title">Cadastre-se para Novidades</a>
         </div>
     </section>
 
-    <section class="py-16 bg-gray-800 text-center">
-        <h2 class="text-4xl font-bold">Por que escolher o Mercado Canábico?</h2>
+    <section class="py-16 secondary-bg text-center">
+        <h2 class="text-4xl font-bold section-title">Por que escolher o Mercado Canábico?</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 px-6">
             <div>
-                <h3 class="text-2xl font-semibold">Variedade de Produtos</h3>
-                <p class="mt-4">Tudo o que você precisa em um só lugar.</p>
+                <h3 class="text-2xl font-semibold section-title">Variedade de Produtos</h3>
+                <p class="mt-4 section-title">Tudo o que você precisa em um só lugar.</p>
             </div>
             <div>
-                <h3 class="text-2xl font-semibold">Conteúdo Educacional</h3>
-                <p class="mt-4">Informações sobre cultivo, uso medicinal e muito mais.</p>
+                <h3 class="text-2xl font-semibold section-title">Conteúdo Educacional</h3>
+                <p class="mt-4 section-title">Informações sobre cultivo, uso medicinal e muito mais.</p>
             </div>
             <div>
-                <h3 class="text-2xl font-semibold">Comunidade Ativa</h3>
-                <p class="mt-4">Junte-se a milhares de entusiastas da cultura canábica.</p>
+                <h3 class="text-2xl font-semibold section-title">Comunidade Ativa</h3>
+                <p class="mt-4 section-title">Junte-se a milhares de entusiastas da cultura canábica.</p>
             </div>
         </div>
     </section>
 
-    <section id="counter" class="py-16 bg-gray-900 text-center">
-        <h2 class="text-4xl font-bold">Faltam...</h2>
-        <div id="contador" class="text-3xl font-semibold mt-6">00 dias, 00 horas, 00 minutos, 00 segundos</div>
-        <a href="#" class="mt-8 inline-block bg-green-500 text-white py-3 px-6 rounded hover:bg-green-600">Receba um Alerta de Lançamento</a>
+    <section id="counter" class="py-16 primary-bg text-center">
+        <h2 class="text-4xl font-bold section-title">Faltam...</h2>
+        <div id="contador" class="text-3xl font-semibold mt-6 section-title">00 dias, 00 horas, 00 minutos, 00 segundos</div>
+        <a href="#" class="mt-8 inline-block accent-bg text-primary py-3 px-6 rounded hover:bg-opacity-90 section-title">Receba um Alerta de Lançamento</a>
     </section>
 
-    <footer class="py-8 bg-gray-800 text-center">
-        <p class="text-gray-400">© 2024 Mercado Canabico. Todos os direitos reservados.</p>
+    <footer class="py-8 secondary-bg text-center">
+        <p class="footer-text section-title">© 2024 Mercado Canabico. Todos os direitos reservados.</p>
     </footer>
 
     <script>
@@ -58,15 +67,14 @@
         const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
         const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
-        document.getElementById("countdown").innerHTML = 
-            `${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
+        document.getElementById("contador").innerHTML = 
+            `${days} dias, ${hours} horas, ${minutes} minutos, ${seconds} segundos`;
 
         if (timeLeft < 0) {
             clearInterval(countdown);
-            document.getElementById("countdown").innerHTML = "Launched!";
+            document.getElementById("contador").innerHTML = "Lançado!";
         }
     }, 1000);
     </script>
-
 </body>
 </html>
