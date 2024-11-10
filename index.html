@@ -8,12 +8,20 @@
     <link rel="icon" type="image/png" href="favicon.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        .primary-bg { background-color: #0B2C88; } /* Azul claro */
-        .secondary-bg { background-color: #14281D; } /* Laranja */
-        .text-primary { color: #23e272; } /* Verde vibrante */
-        .accent-bg { background-color: #E4239D; } /* Rosa choque */
-        .footer-text { color: #ffd733; } /* Amarelo */
-        .section-title { color: #fff; } /* Branco leve */
+        .primary-bg { background-color: #0B2C88; } 
+        .secondary-bg { background-color: #14281D; }
+        .text-primary { color: #23e272; } 
+        .accent-bg { background-color: #E4239D; }
+        .footer-text { color: #ffd733; } 
+        .section-title { color: #fff; } 
+        @media (max-width: 768px) {
+            .banner-image {
+                height: 70vh; 
+            }
+            .launch-text {
+                margin-top: 2rem; 
+            }
+}
     </style>
 </head>
 <body class="primary-bg text-primary">
@@ -31,22 +39,30 @@
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12 px-6">
             <div>
                 <h3 class="text-2xl font-semibold section-title">Variedade de Produtos</h3>
-                <p class="mt-4 section-title">Tudo o que você precisa em um só lugar.</p>
+                <p class="mt-4 section-title">Encontre uma ampla gama de produtos exclusivos e de alta qualidade, 
+                    abrangendo todas as necessidades dos entusiastas da cultura canábica. 
+                    Seja para uso recreativo ou funcional, oferecemos opções que atendem às preferências e expectativas 
+                    dos nossos clientes.</p>
             </div>
             <div>
-                <h3 class="text-2xl font-semibold section-title">Conteúdo Educacional</h3>
-                <p class="mt-4 section-title">Informações sobre cultivo, uso medicinal e muito mais.</p>
+                <h3 class="text-2xl font-semibold section-title">Qualidade Garantida</h3>
+                <p class="mt-4 section-title">Nossos produtos são cuidadosamente selecionados para garantir que atendam 
+                    aos mais altos padrões do mercado. 
+                    Garantimos procedência e excelência em cada item, 
+                    proporcionando uma experiência de compra confiável e satisfatória.</p>
             </div>
             <div>
-                <h3 class="text-2xl font-semibold section-title">Comunidade Ativa</h3>
-                <p class="mt-4 section-title">Junte-se a milhares de entusiastas da cultura canábica.</p>
+                <h3 class="text-2xl font-semibold section-title">Plataforma Completa</h3>
+                <p class="mt-4 section-title">Se você ainda não tem uma loja online ou vende apenas em redes sociais, 
+                    nossa plataforma oferece a solução ideal para expandir sua presença digital e gerenciar suas vendas em um só lugar.</p>
             </div>
         </div>
     </section>
 
     <section class="py-16 primary-bg text-center">
         <h2 class="text-4xl font-bold section-title">Nos ajude a melhorar!</h2>
-        <p class="mt-4 section-title">Queremos ouvir sua opinião! Preencha nosso formulário para contribuir com suas ideias e feedback.</p>
+        <p class="mt-4 section-title">Queremos ouvir sua opinião! Preencha nosso formulário para contribuir com suas ideias e feedback. 
+            Sua participação é essencial para que possamos aprimorar nossos serviços e oferecer uma experiência ainda mais personalizada e completa para todos os nossos usuários.</p>
         <a href="https://forms.gle/asSvohSsmBRcyL6a6" target="_blank" class="mt-6 accent-bg text-primary py-3 px-6 rounded hover:bg-opacity-90 section-title inline-block">Preencher Formulário</a>
     </section>
 
